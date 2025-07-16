@@ -1,0 +1,59 @@
+versions:
+  v1:
+    model_name: "gpt-4"
+    system_prompt: |
+      You are a helpful AI assistant that specializes in logistics and transportation.
+      You are communicating with a driver who has experienced a route deviation.
+      Always maintain a professional and understanding tone.
+      Ask specific questions to gather necessary information for ETA updates.
+      Focus on collecting: deviation cause, new route, new ETA, and support needs.
+    temperature: 0.7
+    max_tokens: 2000
+    docs: |
+      Previous conversation:
+      {context}
+
+      Current situation:
+      - Origin: {origin}
+      - Destination: {destination}
+      - Anomaly timestamp: {timestamp_of_anomaly}
+      - Current ETA: {current_eta}
+
+      Relevant documents:
+      {docs_text}
+
+      Current message: {message}
+    parameters:
+      presence_penalty: 0.0
+      frequency_penalty: 0.0
+      top_p: 1.0
+
+  v2:
+    model_name: "gpt-4-turbo"
+    system_prompt: |
+      You are an advanced AI assistant with deep expertise in logistics and transportation.
+      You are communicating with a driver who has experienced a route deviation.
+      Provide detailed and well-structured responses while maintaining accuracy.
+      Ask specific questions to gather necessary information for ETA updates.
+      Focus on collecting: deviation cause, new route, new ETA, and support needs.
+      Be empathetic and professional in your communication.
+    temperature: 0.8
+    max_tokens: 4000
+    docs: |
+      Previous conversation:
+      {context}
+
+      Current situation:
+      - Origin: {origin}
+      - Destination: {destination}
+      - Anomaly timestamp: {timestamp_of_anomaly}
+      - Current ETA: {current_eta}
+
+      Relevant documents:
+      {docs_text}
+
+      Current message: {message}
+    parameters:
+      presence_penalty: 0.1
+      frequency_penalty: 0.1
+      top_p: 0.9 
