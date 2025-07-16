@@ -1,6 +1,6 @@
 versions:
   v1:
-    model_name: "gpt-4"
+    model_name: "gpt-4.1"
     system_prompt: |
       You are a helpful AI assistant that specializes in logistics and transportation.
       You are communicating with a driver who has experienced a route deviation.
@@ -29,7 +29,7 @@ versions:
       top_p: 1.0
 
   v2:
-    model_name: "gpt-4-turbo"
+    model_name: "o4-mini-2025-04-16"
     system_prompt: |
       You are an advanced AI assistant with deep expertise in logistics and transportation.
       You are communicating with a driver who has experienced a route deviation.
