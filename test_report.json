@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-07-16T19:06:25.716589",
+  "test_duration": 20.114580154418945,
+  "system_health": {
+    "backend": true,
+    "frontend": true,
+    "chat_endpoint": true,
+    "external_apis": true
+  },
+  "backend_tests": {
+    "success": false,
+    "stdout": "",
+    "stderr": "ERROR: usage: __main__.py [options] [file_or_dir] [file_or_dir] [...]\n__main__.py: error: unrecognized arguments: --json-report --json-report-file=test_results_backend.json\n  inifile: None\n  rootdir: /Users/diego/Documents/lesmes\n\n",
+    "returncode": 4
+  },
+  "frontend_tests": {
+    "success": false,
+    "stdout": "",
+    "stderr": "ERROR: usage: __main__.py [options] [file_or_dir] [file_or_dir] [...]\n__main__.py: error: unrecognized arguments: --json-report --json-report-file=test_results_frontend.json\n  inifile: None\n  rootdir: /Users/diego/Documents/lesmes\n\n",
+    "returncode": 4
+  },
+  "system_tests": {
+    "success": true,
+    "stdout": "\ud83d\ude9a ETA Agent System - Frontend Test Suite\n==================================================\n\ud83d\udd0d Testing backend health...\n\u2705 Backend is healthy\n   Response: {'status': 'healthy', 'environment': 'development', 'debug': True}\n\n\ud83d\udcac Testing chat endpoint...\n   Test 1: Hello, I need help with a delivery delay\n   \u2705 Response received\n   \ud83d\udcdd Response: Of course, I'd be happy to assist you with that. Could you please provide me with the shipment detai...\n   \ud83c\udd94 Conversation ID: 1b49fdde-7142-4c7e-aa5b-f55f4656c22f\n   \u26a0\ufe0f  No expected keywords found\n   Test 2: There's heavy traffic on the highway\n   \u2705 Response received\n   \ud83d\udcdd Response: I'm sorry to hear about the heavy traffic. Let's see how we can adjust your route and ETA. Could you...\n   \ud83c\udd94 Conversation ID: 055096ab-105e-4039-9c8e-f1f2df98261c\n   \ud83c\udfaf Found expected keywords: ['traffic', 'route']\n\n\ud83e\udd16 Testing agent services...\n   Testing User Agent...\n   \u2705 User agent responding\n   Testing Driver Agent...\n   \u2705 Driver agent responding\n\n\ud83c\udf10 Testing external API integrations...\n   Testing Weather API...\n   \u2705 Weather API working\n   Testing Traffic API...\n   \u2705 Traffic API working\n\n\ud83c\udfa8 Testing frontend components...\n   \u2705 Config module imported successfully\n   \ud83d\udcdd Page title: ETA Agent System\n   \ud83e\udd16 Agent types: ['user', 'driver']\n   \u274c Import error: No module named 'streamlit'\n\n==================================================\n\u2705 Frontend test suite completed!\n\n\ud83d\udccb Next steps:\n   1. Start the frontend: streamlit run frontend/app.py\n   2. Open browser to: http://localhost:8501\n   3. Test the chat interface with different agent types\n   4. Verify system status and metrics display\n",
+    "stderr": "",
+    "returncode": 0
+  },
+  "overall_status": "FAIL"
+}
