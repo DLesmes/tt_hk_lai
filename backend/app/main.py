@@ -127,11 +127,11 @@ async def chat_endpoint(request: ChatRequest):
 async def test_weather():
     """Test weather API endpoint"""
     try:
-        from app.clients.weather_client import WeatherClient
-        client = WeatherClient()
-        # Test with a sample location
-        weather_data = await client.get_weather(40.7128, -74.0060)  # New York
-        return {"status": "success", "weather_data": weather_data}
+        from app.clients.weather_client import OpenMeteoClient
+        async with OpenMeteoClient() as client:
+            # Test with a sample location
+            weather_data = await client.get_current_weather(40.7128, -74.0060)  # New York
+            return {"status": "success", "weather_data": weather_data}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
@@ -139,11 +139,11 @@ async def test_weather():
 async def test_traffic():
     """Test traffic API endpoint"""
     try:
-        from app.clients.traffic_client import TrafficClient
-        client = TrafficClient()
-        # Test with a sample route
-        traffic_data = await client.get_route_info("New York", "Boston")
-        return {"status": "success", "traffic_data": traffic_data}
+        from app.clients.traffic_client import OpenRouteServiceClient
+        async with OpenRouteServiceClient() as client:
+            # Test with a sample route
+            traffic_data = await client.get_route((40.7128, -74.0060), (42.3601, -71.0589))  # NY to Boston
+            return {"status": "success", "traffic_data": traffic_data}
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
